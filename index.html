@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vectroplex Technologies | Autonomous Systems & Enterprise Platforms</title>
+  <meta name="description"
+    content="Official corporate profile of Vectroplex Technologies. Pioneering cyber-physical autonomous banking nodes, deterministic AI tax compliance engines, and hyperlocal merchant mesh networks." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              bg: '#ffffff',
+              surface: '#f8fafc',
+              card: '#ffffff',
+              cardBorder: '#e2e8f0',
+              blue: '#1d4ed8',
+              accent: '#2563eb',
+              cyan: '#0284c7',
+              emerald: '#059669',
+              amber: '#d97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white text-slate-900 selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP LIVE NETWORK TICKER BANNER -->
+  <div class="bg-slate-50 border-b border-slate-200 px-4 py-2 text-[11px] font-mono text-slate-600">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <span class="flex items-center gap-1.5 text-emerald-700 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>EDGE FLEET: 48 NODES NOMINAL</span>
+        </span>
+        <span class="hidden sm:inline text-slate-300">|</span>
+        <span class="hidden sm:inline">OCR PIPELINE: <strong class="text-blue-600 font-semibold"
+            id="telemetry-latency">13.2 ms</strong></span>
+        <span class="hidden md:inline text-slate-300">|</span>
+        <span class="hidden md:inline">SYSTEM UPTIME: <strong
+            class="text-emerald-700 font-semibold">99.98%</strong></span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="status.html"
+          class="hover:text-blue-600 transition-colors flex items-center gap-1 text-slate-600 font-medium">
+          <span>Fleet Health Center</span>
+          <i data-lucide="external-link" class="w-3 h-3"></i>
+        </a>
+        <button id="cmd-palette-trigger"
+          class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-white border border-slate-200 shadow-sm text-[10px] text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-colors">
+          <span>Quick Command</span>
+          <kbd class="text-blue-600 font-bold">Cmd+K</kbd>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 left-0 right-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3.5 group py-1 shrink-0 mr-6 xl:mr-10">
+        <div class="relative flex items-center justify-center shrink-0">
+          <div
+            class="absolute -inset-1.5 bg-gradient-to-tr from-blue-500/15 via-cyan-500/10 to-emerald-500/15 rounded-2xl blur-sm group-hover:blur-md transition-all duration-300 opacity-80 group-hover:opacity-100">
+          </div>
+          <img src="assets/images/logo-emblem.png" alt="Vectroplex Technologies Logo"
+            class="relative w-11 h-11 object-contain logo-ambient group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <div class="flex flex-col justify-center text-left">
+          <span
+            class="font-display font-extrabold text-[1.18rem] leading-none tracking-[0.05em] text-slate-950 group-hover:text-blue-600 transition-colors">
+            VECTROPLEX
+          </span>
+          <span class="text-[9.5px] font-mono tracking-[0.28em] text-blue-600 font-bold uppercase mt-1">
+            Technologies
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium text-slate-600">
+        <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+        <a href="#about" class="hover:text-blue-600 transition-colors">Company</a>
+        <a href="#scenarios" class="hover:text-blue-600 transition-colors flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Scenarios
+        </a>
+        <a href="#portfolio" class="hover:text-blue-600 transition-colors">Portfolio</a>
+        <a href="#economics" class="hover:text-blue-600 transition-colors">Economics</a>
+        <a href="#roadmap" class="hover:text-blue-600 transition-colors">Roadmap</a>
+        <a href="technology.html" class="hover:text-blue-600 transition-colors">Tech Spec</a>
+        <a href="status.html" class="hover:text-blue-600 transition-colors">Status</a>
+        <a href="careers.html"
+          class="hover:text-amber-600 transition-colors text-amber-700 flex items-center gap-1 font-semibold">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Internships
+        </a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3 shrink-0 ml-4">
+        <button onclick="toggleAudio()" id="audioToggleBtn"
+          class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+          title="Toggle Synthesized Audio">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+        </button>
+
+        <a href="#contact"
+          class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all shadow-md shadow-blue-500/25 hover:shadow-blue-500/40">
+          Partner With Us
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" class="lg:hidden text-slate-700 hover:text-slate-950 p-2" aria-label="Toggle Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer"
+      class="hidden lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-6 py-6 space-y-4 shadow-lg">
+      <div class="flex items-center gap-3 pb-3 border-b border-slate-200">
+        <img src="assets/images/logo-emblem.png" alt="Vectroplex Technologies Logo" class="w-8 h-8 object-contain" />
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-base tracking-wider text-slate-950">VECTROPLEX</span>
+          <span
+            class="text-[9px] font-mono tracking-[0.25em] text-blue-600 font-bold uppercase -mt-0.5">Technologies</span>
+        </div>
+      </div>
+      <a href="#home" class="block text-slate-700 hover:text-blue-600 font-medium mobile-link">Home</a>
+      <a href="#about" class="block text-slate-700 hover:text-blue-600 font-medium mobile-link">Company Profile</a>
+      <a href="#scenarios" class="block text-slate-700 hover:text-blue-600 font-medium mobile-link">Real-World
+        Scenarios</a>
+      <a href="#portfolio" class="block text-slate-700 hover:text-blue-600 font-medium mobile-link">Technology
+        Portfolio</a>
+      <a href="#economics" class="block text-slate-700 hover:text-blue-600 font-medium mobile-link">Enterprise
+        Economics</a>
+      <a href="#roadmap" class="block text-slate-700 hover:text-blue-600 font-medium mobile-link">Product Roadmap</a>
+      <a href="technology.html" class="block text-slate-700 hover:text-blue-600 font-medium mobile-link">Technical
+        Whitepaper</a>
+      <a href="status.html" class="block text-slate-700 hover:text-blue-600 font-medium mobile-link">Fleet Telemetry
+        Status</a>
+      <a href="careers.html" class="block text-amber-700 font-semibold mobile-link flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-4 h-4"></i> Student Internships
+      </a>
+      <a href="#contact"
+        class="block w-full text-center py-2.5 bg-blue-600 text-white font-semibold rounded-lg mobile-link shadow-md">
+        Partner With Us
+      </a>
+    </div>
+  </header>
+
+  <!-- SECTION 1: HOME (HERO) -->
+  <section id="home" class="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-mesh-radial bg-grid-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200 bg-blue-50/80 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+        Deep-Tech Innovation • Cyber-Physical Infrastructure • Deterministic AI
+      </div>
+
+      <h1
+        class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-950 max-w-5xl mx-auto leading-[1.12]">
+        Engineering Autonomous Systems, <span
+          class="bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600 bg-clip-text text-transparent">Financial
+          Intelligence</span>, and Local Commerce.
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+        Vectroplex Technologies bridges cyber-physical hardware engineering with intelligent software platforms. We
+        engineer the foundational physical and digital infrastructure for unstaffed banking, automated tax compliance,
+        and hyperlocal neighborhood commerce resilience.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#scenarios"
+          class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm transition-all shadow-lg shadow-blue-600/25 flex items-center justify-center gap-2">
+          <span>Explore Real-World Scenarios</span>
+          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+        </a>
+        <a href="technology.html"
+          class="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm transition-all shadow-sm flex items-center justify-center gap-2">
+          <span>View Architectural Spec</span>
+          <i data-lucide="file-code" class="w-4 h-4"></i>
+        </a>
+        <a href="#about"
+          class="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-semibold text-sm transition-all flex items-center justify-center gap-2">
+          <span>Company Profile</span>
+          <i data-lucide="shield" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Value Strip -->
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden bg-white">
+          <div
+            class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/80 text-blue-600 flex items-center justify-center mb-4">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-slate-950 text-base">Cyber-Physical Autonomy</h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">24/7 unstaffed physical terminals and
+            automated custody workflows built for resilient edge operation with FIPS 140-3 tamper detection.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden bg-white">
+          <div
+            class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/80 text-emerald-600 flex items-center justify-center mb-4">
+            <i data-lucide="file-check-2" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-slate-950 text-base">Deterministic Compliance</h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">Sub-50ms optical document processing,
+            automated GSTIN validation, and Section 16(2) input tax credit reconciliation with zero human error.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden bg-white">
+          <div
+            class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200/80 text-indigo-600 flex items-center justify-center mb-4">
+            <i data-lucide="store" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-slate-950 text-base">Hyperlocal Commerce Mesh</h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">Distributed spatial inventory
+            synchronization connecting nearby consumers with verified neighborhood merchant stock within a 5km radius.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ABOUT US / COMPANY PROFILE -->
+  <section id="about" class="py-24 border-t border-slate-200 bg-slate-50/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <span class="text-blue-600 font-semibold text-xs tracking-widest uppercase">Company Profile</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 mt-2">Physical Autonomy
+          Meets Algorithmic Precision</h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base">Vectroplex Technologies is an engineering-first deep-tech
+          innovation firm based in Tamil Nadu, India, building foundational infrastructure for the real economy.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-6 space-y-6 text-slate-700 leading-relaxed text-base">
+          <p class="text-lg text-slate-900 font-medium">
+            We believe that true technological progress doesn’t merely live inside consumer phone screens. It transforms
+            real-world interactions, physical institutional branch accessibility, and neighborhood economic vitality.
+          </p>
+          <p class="text-slate-600">
+            From engineering self-contained unstaffed cyber-physical micro-branches for financial institutions, to
+            automating intricate tax compliance workflows for MSMEs, to deploying geo-mesh protocols that give local
+            brick-and-mortar retailers a competitive edge over e-commerce giants—our multidisciplinary team unites edge
+            electronics, applied artificial intelligence, and distributed systems to eliminate systemic friction.
+          </p>
+
+          <div class="pt-4 grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-sm">
+              <div class="font-display font-extrabold text-2xl text-blue-600">48+ Nodes</div>
+              <div class="text-xs text-slate-500 mt-1 font-medium">Active Edge Telemetry Cluster</div>
+            </div>
+            <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-sm">
+              <div class="font-display font-extrabold text-2xl text-emerald-600">&lt; 50 ms</div>
+              <div class="text-xs text-slate-500 mt-1 font-medium">Deterministic Compliance Audit Latency</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 space-y-6">
+          <div class="glass-card rounded-2xl p-7 border-l-4 border-l-blue-600 bg-white shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="compass" class="w-6 h-6 text-blue-600"></i>
+              <h3 class="font-display font-bold text-xl text-slate-950">Our Vision</h3>
+            </div>
+            <p class="text-slate-700 italic text-sm sm:text-base leading-relaxed">
+              "To build an interconnected ecosystem of autonomous physical systems and intelligent software platforms
+              that democratize access to finance, streamline legal compliance, and fuel localized commerce across all
+              communities."
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-7 border-l-4 border-l-emerald-600 bg-white shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="target" class="w-6 h-6 text-emerald-600"></i>
+              <h3 class="font-display font-bold text-xl text-slate-950">Our Mission</h3>
+            </div>
+            <p class="text-slate-700 italic text-sm sm:text-base leading-relaxed">
+              "To eliminate high operational barriers for institutions and small businesses by engineering dependable
+              cyber-physical kiosks, automating complex financial workflows through cognitive AI, and digitally
+              transforming local merchants with intelligent on-demand pre-booking platforms."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- THE VECTORS BEHIND THE SYSTEM / LEADERSHIP -->
+      <div class="mt-20 pt-16 border-t border-slate-200">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono font-semibold uppercase tracking-wider shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+            Leadership & Architects
+          </div>
+          <h3 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-950 tracking-tight">
+            THE VECTORS BEHIND THE SYSTEM
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Engineering the convergence of hardware, edge intelligence, and the physical world.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Person 1: Karthikeya Manikandan S -->
+          <div
+            class="glass-card rounded-2xl p-6 border border-slate-200 hover:border-blue-400 bg-white flex flex-col justify-between group shadow-sm hover:shadow-lg transition-all duration-300">
+            <div>
+              <div class="relative overflow-hidden rounded-xl mb-5 aspect-[3/4] bg-slate-100 border border-slate-200">
+                <img src="assets/images/team/karthikeya.jpg?v=20261020_hd" alt="Karthikeya Manikandan S - Founder"
+                  width="960" height="1280" loading="lazy" decoding="async"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 right-3">
+                  <span
+                    class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/95 text-blue-700 border border-slate-200 font-semibold shadow-sm backdrop-blur-md">
+                    Hardware & Edge
+                  </span>
+                </div>
+              </div>
+
+              <div class="space-y-1.5 text-center">
+                <h4 class="font-display font-bold text-xl text-slate-950 group-hover:text-blue-600 transition-colors">
+                  Karthikeya Manikandan S
+                </h4>
+                <p class="text-xs font-mono font-bold tracking-widest text-blue-600 uppercase">
+                  FOUNDER
+                </p>
+                <p class="text-xs text-slate-600 pt-2 leading-relaxed">
+                  Pioneering cyber-physical terminal architecture, hardware security enclaves, power resilience systems,
+                  and edge IoT firmware watchdogs.
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-slate-100">
+              <a href="https://www.linkedin.com/in/karthikeya-manikandan-s-959904385/" target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#0077b5] border border-slate-200 hover:border-[#0077b5] text-slate-700 hover:text-white text-xs font-semibold transition-all shadow-sm flex items-center justify-center gap-2 group/btn">
+                <i data-lucide="linkedin"
+                  class="w-4 h-4 text-blue-600 group-hover/btn:text-white transition-colors"></i>
+                <span>Connect on LinkedIn</span>
+                <i data-lucide="arrow-up-right"
+                  class="w-3.5 h-3.5 opacity-60 group-hover/btn:opacity-100 transition-opacity"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Person 2: Mohammad Sameer A -->
+          <div
+            class="glass-card rounded-2xl p-6 border border-slate-200 hover:border-blue-400 bg-white flex flex-col justify-between group shadow-sm hover:shadow-lg transition-all duration-300">
+            <div>
+              <div class="relative overflow-hidden rounded-xl mb-5 aspect-[3/4] bg-slate-100 border border-slate-200">
+                <img src="assets/images/team/mohammad-sameer.jpg?v=user_uploaded_final" alt="Mohammad Sameer A - Co-Founder"
+                  width="1024" height="1024" loading="lazy" decoding="async"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 right-3">
+                  <span
+                    class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/95 text-blue-700 border border-slate-200 font-semibold shadow-sm backdrop-blur-md">
+                    Cloud & Systems
+                  </span>
+                </div>
+              </div>
+
+              <div class="space-y-1.5 text-center">
+                <h4 class="font-display font-bold text-xl text-slate-950 group-hover:text-blue-600 transition-colors">
+                  Mohammad Sameer A
+                </h4>
+                <p class="text-xs font-mono font-bold tracking-widest text-blue-600 uppercase">
+                  CO-FOUNDER
+                </p>
+                <p class="text-xs text-slate-600 pt-2 leading-relaxed">
+                  Architecting high-concurrency cloud relays, full-stack microservices, zero-trust telemetry streams,
+                  and distributed spatial mesh networks.
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-slate-100">
+              <a href="https://www.linkedin.com/in/mohammad-sameer-a-653b30379/" target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#0077b5] border border-slate-200 hover:border-[#0077b5] text-slate-700 hover:text-white text-xs font-semibold transition-all shadow-sm flex items-center justify-center gap-2 group/btn">
+                <i data-lucide="linkedin"
+                  class="w-4 h-4 text-blue-600 group-hover/btn:text-white transition-colors"></i>
+                <span>Connect on LinkedIn</span>
+                <i data-lucide="arrow-up-right"
+                  class="w-3.5 h-3.5 opacity-60 group-hover/btn:opacity-100 transition-opacity"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Person 3: Johnjoshwa R -->
+          <div
+            class="glass-card rounded-2xl p-6 border border-slate-200 hover:border-blue-400 bg-white flex flex-col justify-between group shadow-sm hover:shadow-lg transition-all duration-300">
+            <div>
+              <div class="relative overflow-hidden rounded-xl mb-5 aspect-[3/4] bg-slate-100 border border-slate-200">
+                <img src="assets/images/team/johnjoshwa.jpg?v=20261020_hd" alt="Johnjoshwa R - Chief Technology Officer"
+                  width="960" height="1280" loading="lazy" decoding="async"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 right-3">
+                  <span
+                    class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/95 text-blue-700 border border-slate-200 font-semibold shadow-sm backdrop-blur-md">
+                    Applied AI & Rules
+                  </span>
+                </div>
+              </div>
+
+              <div class="space-y-1.5 text-center">
+                <h4 class="font-display font-bold text-xl text-slate-950 group-hover:text-blue-600 transition-colors">
+                  Johnjoshwa R
+                </h4>
+                <p class="text-xs font-mono font-bold tracking-widest text-blue-600 uppercase">
+                  CHIEF TECHNOLOGY OFFICER
+                </p>
+                <p class="text-xs text-slate-600 pt-2 leading-relaxed">
+                  Spearheading deterministic optical character recognition models, automated statutory GST
+                  reconciliation rules, and cognitive AI verification.
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-slate-100">
+              <a href="https://www.linkedin.com/in/johnjoshwatech/" target="_blank" rel="noopener noreferrer"
+                class="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-[#0077b5] border border-slate-200 hover:border-[#0077b5] text-slate-700 hover:text-white text-xs font-semibold transition-all shadow-sm flex items-center justify-center gap-2 group/btn">
+                <i data-lucide="linkedin"
+                  class="w-4 h-4 text-blue-600 group-hover/btn:text-white transition-colors"></i>
+                <span>Connect on LinkedIn</span>
+                <i data-lucide="arrow-up-right"
+                  class="w-3.5 h-3.5 opacity-60 group-hover/btn:opacity-100 transition-opacity"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tagline Banner from Poster -->
+        <div class="mt-12 text-center">
+          <p class="text-[11px] sm:text-xs font-mono tracking-[0.22em] text-blue-700 font-bold uppercase">
+            DEEP-TECH INNOVATION • EMBEDDED INTELLIGENCE • CYBER-PHYSICAL SYSTEMS
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: REAL-WORLD DEPLOYMENT SCENARIOS -->
+  <section id="scenarios" class="py-24 border-t border-slate-200 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="text-blue-600 font-semibold text-xs tracking-widest uppercase">Real-World Case Studies</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 mt-2">Operational Ground
+          Truth Scenarios</h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">Examine how Vectroplex engineering addresses pressing
+          real-world bottlenecks across physical banking deserts, industrial compliance, and local merchant survival.
+        </p>
+      </div>
+
+      <!-- Interactive Scenario Selector Tabs -->
+      <div class="flex flex-wrap justify-center gap-3">
+        <button onclick="window.scenarioViewer.select('banking')" data-scenario="banking"
+          class="scenario-tab active px-5 py-3 rounded-xl border font-medium text-xs sm:text-sm flex items-center gap-2.5">
+          <span class="scenario-indicator w-2 h-2 rounded-full"></span>
+          <span>Scenario 1: Rural & Semi-Urban Unstaffed Banking</span>
+        </button>
+        <button onclick="window.scenarioViewer.select('tax')" data-scenario="tax"
+          class="scenario-tab px-5 py-3 rounded-xl border font-medium text-xs sm:text-sm flex items-center gap-2.5">
+          <span class="scenario-indicator w-2 h-2 rounded-full"></span>
+          <span>Scenario 2: MSME Supply Chain Tax & ITC Reconciliation</span>
+        </button>
+        <button onclick="window.scenarioViewer.select('commerce')" data-scenario="commerce"
+          class="scenario-tab px-5 py-3 rounded-xl border font-medium text-xs sm:text-sm flex items-center gap-2.5">
+          <span class="scenario-indicator w-2 h-2 rounded-full"></span>
+          <span>Scenario 3: Hyperlocal Neighborhood Retail Preservation</span>
+        </button>
+      </div>
+
+      <!-- Active Scenario Detailed Case Card -->
+      <div
+        class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-200 bg-white shadow-sm space-y-10 relative overflow-hidden">
+        <div
+          class="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b border-slate-100 gap-4">
+          <div>
+            <span id="scen-badge"
+              class="text-[11px] font-mono text-blue-700 uppercase tracking-wider px-3 py-1 bg-blue-50 border border-blue-200 rounded-full inline-block mb-2 font-semibold">
+              Cyber-Physical FinTech • Edge Hardware
+            </span>
+            <h3 id="scen-title" class="font-display font-extrabold text-2xl sm:text-3xl text-slate-950">Semi-Urban &
+              Rural Unstaffed Banking Inclusivity</h3>
+            <p id="scen-sub" class="text-xs sm:text-sm text-slate-600 mt-1">Deploying self-contained autonomous
+              micro-branches in unbanked tier-2/3 regions.</p>
+          </div>
+          <div class="flex flex-col items-start md:items-end gap-1 font-mono text-xs">
+            <span class="text-emerald-700 font-semibold flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+              <span id="scen-status-text">Pilot Validated across Peelamedu & Coimbatore Test Nodes</span>
+            </span>
+            <span id="scen-future-platform" class="text-[11px] text-slate-500 font-medium">Dedicated VectroBank Platform
+              Launching in Phase 2</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- The Real-World Challenge & The Vectroplex Engineering Solution -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="p-5 rounded-2xl bg-rose-50/80 border border-rose-200 space-y-2">
+              <span class="text-xs font-bold text-rose-700 block uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i> The Industry Challenge
+              </span>
+              <p id="scen-challenge" class="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                Financial institutions struggle with the high CapEx (₹15L+) and recurring branch staffing costs needed
+                to serve semi-urban and rural centers. As a result, millions of citizens must commute 20+ km for basic
+                loan collateral deposits, document attestation, and secure physical filings.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-blue-50/80 border border-blue-200 space-y-2">
+              <span class="text-xs font-bold text-blue-700 block uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="zap" class="w-4 h-4"></i> The Vectroplex Engineering Deployment
+              </span>
+              <p id="scen-solution" class="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                Vectroplex engineers autonomous unstaffed terminals housed in 3mm hardened cold-rolled steel. Integrated
+                with dual-spectrum optical scanners, biometrics, multi-lingual voice guidance, and FIPS 140-3
+                cryptographic enclaves, citizens authenticate and deposit physical records 24/7 without on-site branch
+                staff.
+              </p>
+            </div>
+          </div>
+
+          <!-- Architecture Blueprint & Measured Impact Metrics -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <span class="text-xs font-bold text-slate-900 uppercase tracking-wider block flex items-center gap-1.5">
+                <i data-lucide="layers" class="w-4 h-4 text-blue-600"></i> Core Architectural Foundations
+              </span>
+              <ul id="scen-arch-list" class="space-y-2.5">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+                  <span class="text-xs text-slate-700 font-medium">Broadcom BCM2711 + ESP32-S3 dual-core redundant
+                    hardware watchdog</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+                  <span class="text-xs text-slate-700 font-medium">Hardware security enclave (Microchip ATECC608B + TPM
+                    2.0)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+                  <span class="text-xs text-slate-700 font-medium">Zero-voltage tamper detection with instantaneous
+                    memory purge</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+                  <span class="text-xs text-slate-700 font-medium">Solar DC array input + LiFePO4 battery for 48-hour
+                    continuous power autonomy</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Measured Operational Metrics -->
+            <div id="scen-metrics-grid" class="grid grid-cols-2 gap-3">
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <span class="text-slate-500 text-[11px] font-mono block uppercase font-medium">OpEx Reduction</span>
+                <span class="font-display font-extrabold text-2xl text-slate-950 mt-1 block">89%</span>
+                <span class="text-slate-600 text-[10px] mt-0.5 block leading-tight font-medium">vs. staffed
+                  brick-and-mortar branch</span>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <span class="text-slate-500 text-[11px] font-mono block uppercase font-medium">Service
+                  Availability</span>
+                <span class="font-display font-extrabold text-2xl text-slate-950 mt-1 block">24/7/365</span>
+                <span class="text-slate-600 text-[10px] mt-0.5 block leading-tight font-medium">Zero downtime unstaffed
+                  operations</span>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <span class="text-slate-500 text-[11px] font-mono block uppercase font-medium">Average Session
+                  Time</span>
+                <span class="font-display font-extrabold text-2xl text-slate-950 mt-1 block">2.4 mins</span>
+                <span class="text-slate-600 text-[10px] mt-0.5 block leading-tight font-medium">From biometric scan to
+                  vault custody</span>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <span class="text-slate-500 text-[11px] font-mono block uppercase font-medium">Hardware Tamper
+                  Incidents</span>
+                <span class="font-display font-extrabold text-2xl text-slate-950 mt-1 block">0 Breaches</span>
+                <span class="text-slate-600 text-[10px] mt-0.5 block leading-tight font-medium">Across 48 pilot test
+                  nodes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: STRATEGIC TECHNOLOGY PORTFOLIO & PLATFORM DIVISIONS -->
+  <section id="portfolio" class="py-24 border-t border-slate-200 bg-slate-50/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="text-blue-600 font-semibold text-xs tracking-widest uppercase">Technology Portfolio</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 mt-2">Enterprise
+          Divisions & Strategic Platforms</h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base">
+          Vectroplex Technologies operates as the parent innovation lab behind three specialized engineering platforms.
+          Dedicated standalone product websites and client web apps are being rolled out in phased sequence.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Product 1 -->
+        <div
+          class="glass-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden bg-white border border-slate-200 hover:border-blue-400 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-[11px] font-bold text-blue-700 uppercase tracking-widest px-3 py-1 bg-blue-50 border border-blue-200 rounded-full inline-block">
+                Cyber-Physical FinTech
+              </span>
+              <span class="text-[10px] font-mono text-slate-400 font-bold">Div-01</span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-slate-950">VectroBank™ Autonomous Terminal</h3>
+            <p class="text-xs text-blue-600 font-mono font-semibold mt-1">Unstaffed Micro-Branch & Smart Physical
+              Custody Kiosk</p>
+
+            <p class="text-xs sm:text-sm text-slate-600 mt-4 leading-relaxed font-normal">
+              A compact, self-operating physical terminal engineered to function as an autonomous micro-branch. Equipped
+              with secure hardware intake systems, multimodal optical document verification, and multilingual voice
+              interaction. Allows citizens to authenticate, submit collateral or records, and access credit evaluation
+              around the clock with zero human intervention on site.
+            </p>
+
+            <div class="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs text-slate-700">
+              <div class="text-slate-900 font-bold">Target Implementations:</div>
+              <div>• Tier-2/3 Semi-Urban Micro-Branch Expansion</div>
+              <div>• 24/7 Secure Document & Physical Custody Depository</div>
+              <div>• Autonomous Agrarian Credit Record Verification</div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-100 space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-500 font-medium">Deployment Status:</span>
+              <span class="text-emerald-700 font-bold">Pilot Hardware Validated</span>
+            </div>
+            <div
+              class="p-2.5 rounded-lg bg-blue-50 border border-blue-200 text-center text-xs text-blue-700 font-semibold">
+              Dedicated Product Website Launching in Phase 2
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div
+          class="glass-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden bg-white border border-slate-200 hover:border-emerald-400 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-[11px] font-bold text-emerald-700 uppercase tracking-widest px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full inline-block">
+                Financial Intelligence
+              </span>
+              <span class="text-[10px] font-mono text-slate-400 font-bold">Div-02</span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-slate-950">TaxPulse™ Cognitive Engine</h3>
+            <p class="text-xs text-emerald-700 font-mono font-semibold mt-1">Automated Fiscal Extraction & Section 16(2)
+              GST Engine</p>
+
+            <p class="text-xs sm:text-sm text-slate-600 mt-4 leading-relaxed font-normal">
+              An algorithmic financial intelligence platform that reads raw invoices, receipts, and income proofs,
+              extracts critical fiscal data, and automatically computes tax liabilities and allowable credits. The
+              engine runs rule-based validation to produce accurate, audit-ready filings in seconds, significantly
+              reducing the cost and complexity of compliance.
+            </p>
+
+            <div class="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs text-slate-700">
+              <div class="text-slate-900 font-bold">Target Implementations:</div>
+              <div>• MSME Multi-Format Purchase Ledger Reconciliation</div>
+              <div>• GSTR-2B Automated ITC Discrepancy Matching</div>
+              <div>• High-Throughput Corporate Expense Document Audit</div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-100 space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-500 font-medium">Deployment Status:</span>
+              <span class="text-emerald-700 font-bold">Rules Engine Active</span>
+            </div>
+            <div
+              class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-center text-xs text-emerald-700 font-semibold">
+              Dedicated SaaS Web Portal Launching Soon
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div
+          class="glass-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden bg-white border border-slate-200 hover:border-indigo-400 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="text-[11px] font-bold text-indigo-700 uppercase tracking-widest px-3 py-1 bg-indigo-50 border border-indigo-200 rounded-full inline-block">
+                B2B & Local Commerce
+              </span>
+              <span class="text-[10px] font-mono text-slate-400 font-bold">Div-03</span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-slate-950">NearGrid™ Hyperlocal Mesh</h3>
+            <p class="text-xs text-indigo-700 font-mono font-semibold mt-1">Neighborhood Merchant Stock Discovery &
+              Pre-Booking Protocol</p>
+
+            <p class="text-xs sm:text-sm text-slate-600 mt-4 leading-relaxed font-normal">
+              A dedicated spatial commerce platform bridging buyers with nearby verified brick-and-mortar stores. When a
+              buyer searches for a specific product, the platform scans available inventory across registered local
+              shops in their vicinity. Buyers secure the item immediately through upfront pre-booking, guaranteeing
+              availability for walk-in pickup within minutes while driving predictable sales for neighborhood retailers.
+            </p>
+
+            <div class="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs text-slate-700">
+              <div class="text-slate-900 font-bold">Target Implementations:</div>
+              <div>• Neighborhood Hardware & Electronics Store Networks</div>
+              <div>• High-Demand Industrial Spares Pre-Booking</div>
+              <div>• Local Retail Merchant Footfall & Digital Parity</div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-100 space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-500 font-medium">Deployment Status:</span>
+              <span class="text-indigo-700 font-bold">Spatial Mesh Tested</span>
+            </div>
+            <div
+              class="p-2.5 rounded-lg bg-indigo-50 border border-indigo-200 text-center text-xs text-indigo-700 font-semibold">
+              Consumer & Merchant Web App in Phase 2 Roadmap
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enterprise Pilot Callout -->
+      <div
+        class="p-6 rounded-2xl bg-blue-50/70 border border-blue-200 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-700 shadow-sm">
+        <div class="flex items-center gap-3">
+          <i data-lucide="info" class="w-5 h-5 text-blue-600 shrink-0"></i>
+          <span>Are you an institution or enterprise seeking early pilot integration or private API access before
+            standalone product web portal releases?</span>
+        </div>
+        <a href="#contact"
+          class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold whitespace-nowrap transition-colors shadow-sm">
+          Request Early Pilot Access
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: INSTITUTIONAL ECONOMICS & DEPLOYMENT FEASIBILITY -->
+  <section id="economics" class="py-24 border-t border-slate-200 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-blue-600 font-semibold text-xs tracking-widest uppercase">Institutional Economics</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950">CapEx & OpEx Feasibility
+          Analysis</h2>
+        <p class="text-slate-600 text-sm sm:text-base">Institutional 3-year total cost of ownership (TCO) comparison
+          between traditional staffed physical branches and Vectroplex Autonomous Micro-Branches.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card rounded-2xl p-8 border border-slate-200 bg-slate-50/70 space-y-6">
+          <div
+            class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center font-display font-bold">
+            <i data-lucide="building-2" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-xl text-slate-950">Traditional Staffed Branch</h3>
+            <p class="text-xs text-slate-500 mt-1 font-medium">Standard brick-and-mortar branch model</p>
+          </div>
+          <div class="space-y-3 font-mono text-xs text-slate-700 border-t border-slate-200 pt-4">
+            <div class="flex justify-between">
+              <span class="text-slate-500">CapEx / Location:</span>
+              <span class="text-slate-950 font-semibold">₹12,00,000</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Monthly Rent & Staff:</span>
+              <span class="text-rose-700 font-bold">₹1,50,000 / mo</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">3-Year TCO (5 Branches):</span>
+              <span class="text-rose-700 font-bold text-base">₹3.30 Crore</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            High barrier to entry. Limited to 10 AM – 5 PM operating hours, requires full physical lease agreements and
+            continuous on-site security personnel.
+          </p>
+        </div>
+
+        <div
+          class="glass-card rounded-2xl p-8 border-2 border-blue-500 bg-blue-50/40 space-y-6 relative overflow-hidden shadow-md">
+          <div
+            class="absolute top-3 right-3 text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-blue-600 text-white shadow-sm">
+            OPTIMIZED
+          </div>
+          <div
+            class="w-12 h-12 rounded-xl bg-blue-100 border border-blue-200 text-blue-700 flex items-center justify-center font-display font-bold">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-xl text-slate-950">Vectroplex Autonomous Kiosk</h3>
+            <p class="text-xs text-blue-700 mt-1 font-semibold">Unstaffed cyber-physical micro-branch</p>
+          </div>
+          <div class="space-y-3 font-mono text-xs text-slate-700 border-t border-blue-200 pt-4">
+            <div class="flex justify-between">
+              <span class="text-slate-500">Terminal Unit CapEx:</span>
+              <span class="text-slate-950 font-bold">₹3,20,000</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Cloud Telemetry OpEx:</span>
+              <span class="text-emerald-700 font-bold">₹12,000 / mo</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">3-Year TCO (5 Units):</span>
+              <span class="text-blue-700 font-extrabold text-base">₹37.60 Lakhs</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-700 leading-relaxed font-normal">
+            Eliminates real estate footprint. Operates 24/7/365 with solar DC failover, tamper security enclaves, and
+            remote zero-trust firmware monitoring.
+          </p>
+        </div>
+
+        <div
+          class="glass-card rounded-2xl p-8 border border-emerald-300 bg-emerald-50/40 space-y-6 flex flex-col justify-between shadow-sm">
+          <div class="space-y-4">
+            <div
+              class="w-12 h-12 rounded-xl bg-emerald-100 border border-emerald-200 text-emerald-700 flex items-center justify-center font-display font-bold">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl text-slate-950">Net Institutional Advantage</h3>
+              <p class="text-xs text-emerald-800 mt-1 font-semibold">Quantifiable economic outcomes</p>
+            </div>
+            <div class="space-y-3 border-t border-emerald-200 pt-4">
+              <div>
+                <span class="text-xs font-mono text-slate-600 block uppercase font-medium">Net 3-Year Capital
+                  Savings:</span>
+                <span class="font-display font-extrabold text-3xl text-emerald-700">₹2.92 Crore</span>
+                <span class="text-xs font-mono text-emerald-800 font-bold block mt-0.5">89% Cost Reduction</span>
+              </div>
+              <div class="pt-2 text-xs font-mono text-slate-600">
+                <span>Payback Threshold: <strong class="text-slate-950">2.3 Months</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact"
+            class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider text-center transition-all shadow-md shadow-emerald-600/25">
+            Request Formal Feasibility Dossier
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: STRATEGIC R&D & PRODUCT LAUNCH ROADMAP -->
+  <section id="roadmap" class="py-24 border-t border-slate-200 bg-slate-50/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-blue-600 font-semibold text-xs tracking-widest uppercase">Strategic Vision</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950">Product & Ecosystem
+          Roadmap</h2>
+        <p class="text-slate-600 text-sm sm:text-base">Our multi-phase progression from foundational cyber-physical
+          engineering to independent product platforms and nationwide networks.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Milestone 1 -->
+        <div class="glass-card rounded-2xl p-8 border border-blue-300 bg-white shadow-sm space-y-5 relative">
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono font-bold">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+            PHASE 1: ACTIVE MILESTONE
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-950">Core Hardware & Engine Validation</h3>
+          <ul class="space-y-2.5 text-xs text-slate-700">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+              <span>FIPS 140-3 hardware enclave cryptographic prototyping (ATECC608B).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+              <span>Section 16(2) GST deterministic invoice matching rules engine.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+              <span>Peelamedu & Coimbatore edge telemetry cluster (48 pilot nodes).</span>
+            </li>
+          </ul>
+          <span class="text-[11px] font-mono text-emerald-700 font-bold block pt-4 border-t border-slate-100">Completed
+            & In Active Validation</span>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="glass-card rounded-2xl p-8 border border-slate-200 bg-white shadow-sm space-y-5 relative">
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-mono font-bold">
+            <span>PHASE 2: UPCOMING (Q3 - Q4 2026)</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-950">Dedicated Product Websites & Portals</h3>
+          <ul class="space-y-2.5 text-xs text-slate-700">
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
+              <span>Launch of standalone web applications for VectroBank, TaxPulse, and NearGrid.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
+              <span>Merchant self-serve inventory portals and consumer localized discovery app.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
+              <span>Institutional banking API integrations & regulatory GSP sandbox clearance.</span>
+            </li>
+          </ul>
+          <span class="text-[11px] font-mono text-indigo-700 font-bold block pt-4 border-t border-slate-100">In Active
+            Architecture & Development</span>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="glass-card rounded-2xl p-8 border border-slate-200 bg-white shadow-sm space-y-5 relative">
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold">
+            <span>PHASE 3: SCALE (2027)</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-950">Fleet Expansion & Sovereign Mesh</h3>
+          <ul class="space-y-2.5 text-xs text-slate-700">
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+              <span>Mass deployment across 500+ unstaffed tier-2/3 banking terminals.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+              <span>Multi-state hyperlocal merchant network onboarding with zero-latency pre-booking.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+              <span>Sovereign offline mesh failover protocols using LoRa / BLE micro-beacons.</span>
+            </li>
+          </ul>
+          <span class="text-[11px] font-mono text-slate-500 font-medium block pt-4 border-t border-slate-100">Commercial
+            Rollout Blueprint</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT INNOVATION & COLLABORATIVE INTERNSHIP CELL BANNER -->
+  <section id="internships"
+    class="py-16 border-t border-slate-200 bg-gradient-to-b from-white via-amber-50/20 to-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="glass-card rounded-3xl p-8 sm:p-12 border border-amber-300 bg-amber-50/40 relative overflow-hidden shadow-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-800 text-xs font-bold uppercase tracking-wider">
+              <i data-lucide="award" class="w-3.5 h-3.5"></i> Collaborative Talent Cell
+            </div>
+            <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-950">
+              We Are Hiring Active Student Innovators for Collaborative Internships
+            </h3>
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+              Are you an ambitious engineering or computer science undergraduate looking to work on live
+              hardware-software robotics, edge AI vision, and scalable e-commerce systems? Vectroplex Technologies is
+              actively welcoming passionate, collaborative students for <strong>unpaid collaborative
+                internships</strong>. Work closely with our founders, build patent-worthy innovations, and gain direct
+              startup deployment experience.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span
+                class="px-3 py-1 bg-white border border-amber-200 text-xs text-slate-700 font-medium rounded-lg shadow-sm">IoT
+                & Microcontrollers (RPi / ESP32)</span>
+              <span
+                class="px-3 py-1 bg-white border border-amber-200 text-xs text-slate-700 font-medium rounded-lg shadow-sm">Computer
+                Vision & Multimodal AI</span>
+              <span
+                class="px-3 py-1 bg-white border border-amber-200 text-xs text-slate-700 font-medium rounded-lg shadow-sm">Full-Stack
+                Web (FastAPI / Next.js)</span>
+              <span
+                class="px-3 py-1 bg-white border border-amber-200 text-xs text-slate-700 font-medium rounded-lg shadow-sm">Product
+                Research & Operations</span>
+            </div>
+          </div>
+          <div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-3">
+            <a href="careers.html"
+              class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm transition-all shadow-md shadow-amber-500/25 flex items-center gap-2">
+              Explore Internship Cell
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <span class="text-xs text-slate-500 font-medium">Includes online technical skill challenge.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: REVIEWS & INDUSTRY VALIDATION -->
+  <section id="reviews" class="py-24 border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <span class="text-blue-600 font-semibold text-xs tracking-widest uppercase">Validation & Proof</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 mt-2">Ecosystem Impact &
+          Feedback</h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">What enterprise partners, evaluators, and retail merchants
+          say about our platforms.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="glass-card rounded-2xl p-8 flex flex-col justify-between bg-white border border-slate-200 shadow-sm">
+          <div class="space-y-4">
+            <div class="flex text-amber-500 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed">
+              "Vectroplex’s approach to autonomous terminals rethinks branch architecture. The seamless transition from
+              optical document verification to secure physical handling proves that unstaffed banking can be safe,
+              reliable, and accessible."
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-100">
+            <h4 class="font-bold text-sm text-slate-950">Banking Automation & Hardware Pilot</h4>
+            <p class="text-xs text-blue-600 font-medium">Financial Systems Specialist & Pilot Reviewer</p>
+          </div>
+        </div>
+
+        <div
+          class="glass-card rounded-2xl p-8 flex flex-col justify-between bg-white border border-slate-200 shadow-sm">
+          <div class="space-y-4">
+            <div class="flex text-amber-500 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed">
+              "The automated tax engine takes the dread out of filing. Converting unformatted receipts and invoices into
+              structured, compliant tax summaries without manual bookkeeping saves substantial time."
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-100">
+            <h4 class="font-bold text-sm text-slate-950">Compliance & AI Tax Solutions</h4>
+            <p class="text-xs text-emerald-700 font-medium">MSME Commercial Partner</p>
+          </div>
+        </div>
+
+        <div
+          class="glass-card rounded-2xl p-8 flex flex-col justify-between bg-white border border-slate-200 shadow-sm">
+          <div class="space-y-4">
+            <div class="flex text-amber-500 gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed">
+              "As a local shop owner, getting customer footfall used to be unpredictable. The pre-booking network lets
+              customers see my stock in real time and pay before visiting. It gives neighborhood retailers the digital
+              edge we desperately needed."
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-100">
+            <h4 class="font-bold text-sm text-slate-950">Hyperlocal Retail Enablement</h4>
+            <p class="text-xs text-indigo-700 font-medium">Retail Store Owner & Merchant Partner</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: CONTACT US / ENTERPRISE INQUIRIES -->
+  <section id="contact" class="py-24 border-t border-slate-200 bg-slate-50/70 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <span class="text-blue-600 font-semibold text-xs tracking-widest uppercase">Reach Out</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 mt-2">Partner With
+          Vectroplex</h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">Whether you represent a financial institution looking for
+          autonomous micro-branch kiosks, an enterprise needing high-volume AI compliance, a neighborhood merchant
+          joining our mesh, or an ambitious student applying for our internship—our founders and engineering team are
+          ready.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="glass-card rounded-2xl p-6 space-y-4 bg-white border border-slate-200 shadow-sm">
+            <h3 class="font-display font-bold text-lg text-slate-950">Direct Support & Lines</h3>
+
+            <a href="tel:+916385365650"
+              class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 block font-medium">Voice / Mobile</span>
+                <span class="text-sm font-bold text-slate-950">+91 6385365650</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/919092623330" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-4 p-3.5 rounded-xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                <i data-lucide="message-square" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 block font-medium">WhatsApp Business</span>
+                <span class="text-sm font-bold text-emerald-700">+91 90926 23330</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 space-y-4 bg-white border border-blue-200 shadow-sm">
+            <div>
+              <h3 class="font-display font-bold text-lg text-slate-950">Official Corporate Inquiries</h3>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                For institutional partnerships, hardware pilot inquiries, and corporate correspondence:
+              </p>
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition-colors text-xs">
+              <a href="mailto:vectroplextechnologies@gmail.com"
+                class="flex items-center gap-2.5 text-blue-600 hover:text-blue-700 font-mono transition-colors">
+                <i data-lucide="mail" class="w-4 h-4 text-blue-600 shrink-0"></i>
+                <span class="font-bold text-sm">vectroplextechnologies@gmail.com</span>
+              </a>
+              <button onclick="copyToClipboard('vectroplextechnologies@gmail.com', this)"
+                class="text-blue-700 hover:bg-blue-100 px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-lg text-xs font-mono font-bold transition-colors">Copy</button>
+            </div>
+
+            <div class="flex items-center gap-2 text-[11px] font-mono text-slate-500 pt-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Direct Corporate Inbox • 24/7 Operations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form id="contactForm" class="glass-card rounded-2xl p-8 space-y-5 bg-white border border-slate-200 shadow-sm"
+            onsubmit="handleFormSubmit(event)">
+            <h3 class="font-display font-bold text-xl text-slate-950 mb-2">Send an Interactive Inquiry</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+                <input type="text" id="fullName" required placeholder="e.g. Anand Kumar"
+                  class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors shadow-sm" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Organization / Store / College *</label>
+                <input type="text" id="organization" required placeholder="e.g. Retail Store / College Name"
+                  class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors shadow-sm" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Phone / WhatsApp Number *</label>
+                <input type="tel" id="phoneNumber" required placeholder="+91 98765 43210"
+                  class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors shadow-sm" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address *</label>
+                <input type="email" id="emailAddress" required placeholder="your.name@company.com"
+                  class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors shadow-sm" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Area of Interest *</label>
+              <select id="areaOfInterest" required
+                class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors shadow-sm">
+                <option value="" disabled selected>Select an area...</option>
+                <option value="Autonomous Banking Terminals">Autonomous Banking Terminals (Cyber-Physical)</option>
+                <option value="AI Tax Filing Platform">AI Tax Filing Platform & Compliance Engine</option>
+                <option value="Local Merchant Pre-Booking Network">Local Merchant Pre-Booking Network (Hyperlocal B2B)
+                </option>
+                <option value="Student Internship Application">Student Collaborative Internship Application (Unpaid)
+                </option>
+                <option value="Strategic Partnership / Investment">Strategic Partnership / Investor Inquiry</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Message / Specific Query *</label>
+              <textarea id="message" rows="4" required
+                placeholder="Provide details regarding your requirement, store inventory, or internship background..."
+                class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors shadow-sm"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn"
+              class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm transition-all shadow-md shadow-blue-500/25 flex items-center justify-center gap-2">
+              <span>Send Inquiry</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+
+            <div id="formSuccessToast"
+              class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-medium">
+              Thank you! Your transmission has been compiled and routed directly to our founders.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-slate-200 bg-slate-50 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <div class="flex flex-wrap justify-center items-center gap-6 text-slate-600 font-medium">
+        <a href="#about" class="hover:text-blue-600 transition-colors">Company Profile</a>
+        <a href="#scenarios" class="hover:text-blue-600 transition-colors">Real-World Scenarios</a>
+        <a href="#portfolio" class="hover:text-blue-600 transition-colors">Technology Portfolio</a>
+        <a href="technology.html" class="hover:text-blue-600 transition-colors">Technical Architecture</a>
+        <a href="status.html" class="hover:text-blue-600 transition-colors">Live Fleet Status</a>
+        <a href="careers.html" class="hover:text-amber-700 transition-colors">Student Internships</a>
+      </div>
+      <div class="flex justify-center items-center gap-3 text-slate-950 font-display font-bold">
+        <img src="assets/images/logo-emblem.png" alt="Vectroplex Emblem" class="w-8 h-8 object-contain" />
+        <span class="tracking-wider text-sm font-extrabold">VECTROPLEX TECHNOLOGIES</span>
+      </div>
+      <p class="text-slate-500">© 2026 Vectroplex Technologies. Autonomous Systems • Financial Intelligence • Local
+        Commerce. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- GLOBAL COMMAND CENTER DIALOG (Cmd+K) -->
+  <dialog id="cmd-palette-dialog"
+    class="p-0 rounded-2xl glass-panel shadow-2xl border border-slate-200 w-full max-w-xl bg-white">
+    <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+      <i data-lucide="search" class="w-4 h-4 text-blue-600"></i>
+      <input type="text" id="cmd-palette-input" placeholder="Type a command or jump to section..."
+        class="bg-transparent text-slate-900 text-sm w-full focus:outline-none placeholder:text-slate-400" />
+      <span
+        class="text-[10px] font-mono text-slate-500 px-1.5 py-0.5 rounded border border-slate-200 bg-slate-50">ESC</span>
+      <button id="cmd-palette-close" class="text-slate-400 hover:text-slate-700 p-1">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+    <div id="cmd-palette-results" class="p-3 max-h-80 overflow-y-auto space-y-1">
+      <!-- Populated by command-palette.js -->
+    </div>
+  </dialog>
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/sound-fx.js"></script>
+  <script src="assets/js/scenarios.js"></script>
+  <script src="assets/js/command-palette.js"></script>
+
+  <script>
+    lucide.createIcons();
+
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    if (mobileBtn && drawer) {
+      mobileBtn.addEventListener('click', () => drawer.classList.toggle('hidden'));
+    }
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (drawer) drawer.classList.add('hidden');
+      });
+    });
+
+    function toggleAudio() {
+      if (window.vectroSound) {
+        const enabled = window.vectroSound.toggle();
+        const btn = document.getElementById('audioToggleBtn');
+        if (btn) {
+          btn.innerHTML = enabled ? '<i data-lucide="volume-2" class="w-4 h-4 text-blue-600"></i>' : '<i data-lucide="volume-x" class="w-4 h-4 text-slate-400"></i>';
+          lucide.createIcons();
+        }
+      }
+    }
+
+    function copyToClipboard(text, btnElement) {
+      if (window.vectroSound) window.vectroSound.click();
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btnElement.innerText;
+        btnElement.innerText = "Copied!";
+        btnElement.classList.add("bg-emerald-100", "text-emerald-700");
+        setTimeout(() => {
+          btnElement.innerText = original;
+          btnElement.classList.remove("bg-emerald-100", "text-emerald-700");
+        }, 2000);
+      });
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      if (window.vectroSound) window.vectroSound.click();
+
+      const btn = document.getElementById('submitBtn');
+      const toast = document.getElementById('formSuccessToast');
+
+      const name = document.getElementById('fullName').value;
+      const org = document.getElementById('organization').value;
+      const phone = document.getElementById('phoneNumber').value;
+      const email = document.getElementById('emailAddress').value;
+      const interest = document.getElementById('areaOfInterest').value;
+      const message = document.getElementById('message').value;
+
+      btn.disabled = true;
+      btn.innerText = "Routing to Founders...";
+
+      setTimeout(() => {
+        if (window.vectroSound) window.vectroSound.success();
+        toast.classList.remove('hidden');
+        btn.disabled = false;
+        btn.innerHTML = '<span>Inquiry Recorded Successfully</span>';
+
+        const waText = encodeURIComponent(`*Vectroplex Technologies Enterprise Inquiry*\n*Name:* ${name}\n*Org:* ${org}\n*Phone:* ${phone}\n*Email:* ${email}\n*Interest:* ${interest}\n*Message:* ${message}`);
+        window.open(`https://wa.me/919092623330?text=${waText}`, '_blank');
+      }, 700);
+    }
+  </script>
+</body>
+
+</html>

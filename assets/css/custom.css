@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Vectroplex Technologies - Enterprise Design System (Crisp White Theme)
+   Designed for high-trust institutional finance, hardware robotics & enterprise platforms
+   ========================================================================== */
+
+:root {
+  --brand-bg: #ffffff;
+  --brand-surface: #f8fafc;
+  --brand-card: #ffffff;
+  --brand-border: #e2e8f0;
+  --brand-border-hover: #93c5fd;
+  --brand-blue: #1d4ed8;
+  --brand-emerald: #059669;
+  --brand-cyan: #0284c7;
+  --brand-text-primary: #0f172a;
+  --brand-text-secondary: #475569;
+  --brand-text-muted: #64748b;
+}
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 2px solid #f8fafc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Ambient Radial Mesh Backgrounds on White */
+.bg-mesh-radial {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.08) 0%, transparent 65%),
+    radial-gradient(circle at 90% 25%, rgba(5, 150, 105, 0.06) 0%, transparent 55%),
+    radial-gradient(circle at 10% 65%, rgba(2, 132, 199, 0.06) 0%, transparent 55%);
+}
+
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.09) 1px, transparent 1px);
+}
+
+/* Crisp Enterprise Glass & Navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04);
+}
+
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(37, 99, 235, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* Light Theme Badges & Highlights */
+.glow-badge {
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.12);
+}
+
+.glow-blue {
+  box-shadow: 0 4px 20px -2px rgba(37, 99, 235, 0.25);
+}
+
+.glow-emerald {
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.25);
+}
+
+/* Brand Text Gradient for Crisp Light Mode */
+.brand-gradient-text {
+  background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Shimmer for Light Cards */
+@keyframes shimmerLight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(37, 99, 235, 0.06) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmerLight 3s infinite;
+}
+
+/* Dialog in Light Theme */
+dialog {
+  border: none;
+  background: transparent;
+  color: inherit;
+  max-width: 95vw;
+}
+
+dialog::backdrop {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Tooltips */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.15);
+}
+
+/* Scenario Tabs for Light Mode */
+.scenario-tab {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  transition: all 0.25s ease;
+}
+
+.scenario-tab:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+.scenario-tab.active {
+  background: #eff6ff !important;
+  border-color: #3b82f6 !important;
+  color: #1d4ed8 !important;
+  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.15);
+}
+
+.scenario-tab.active .scenario-indicator {
+  background-color: #2563eb !important;
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+/* Logo Ambient Glow on Light Mode */
+@keyframes logoPulseLight {
+  0%, 100% {
+    filter: drop-shadow(0 2px 6px rgba(37, 99, 235, 0.18));
+  }
+  50% {
+    filter: drop-shadow(0 4px 14px rgba(2, 132, 199, 0.32));
+  }
+}
+
+.logo-ambient {
+  animation: logoPulseLight 4s ease-in-out infinite;
+}

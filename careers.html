@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Collaborative Internship Cell | Vectroplex Technologies</title>
+  <meta name="description" content="Join Vectroplex Technologies as an active student innovator. Collaborative internships in cyber-physical robotics, edge AI, distributed systems, and hyperlocal commerce." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              bg: '#ffffff',
+              surface: '#f8fafc',
+              card: '#ffffff',
+              cardBorder: '#e2e8f0',
+              blue: '#1d4ed8',
+              accent: '#2563eb',
+              cyan: '#0284c7',
+              emerald: '#059669',
+              amber: '#d97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-slate-900 selection:bg-amber-400 selection:text-black">
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 left-0 right-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3.5 group py-1 shrink-0 mr-6 xl:mr-10">
+        <div class="relative flex items-center justify-center shrink-0">
+          <div class="absolute -inset-1.5 bg-gradient-to-tr from-blue-500/15 via-cyan-500/10 to-emerald-500/15 rounded-2xl blur-sm group-hover:blur-md transition-all duration-300 opacity-80 group-hover:opacity-100"></div>
+          <img src="assets/images/logo-emblem.png" alt="Vectroplex Technologies Logo" class="relative w-11 h-11 object-contain logo-ambient group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <div class="flex flex-col justify-center text-left">
+          <span class="font-display font-extrabold text-[1.18rem] leading-none tracking-[0.05em] text-slate-950 group-hover:text-blue-600 transition-colors">
+            VECTROPLEX
+          </span>
+          <span class="text-[9.5px] font-mono tracking-[0.28em] text-blue-600 font-bold uppercase mt-1">
+            Technologies
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 xl:gap-7 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-blue-600 transition-colors">Home</a>
+        <a href="index.html#about" class="hover:text-blue-600 transition-colors">Company</a>
+        <a href="index.html#scenarios" class="hover:text-blue-600 transition-colors">Scenarios</a>
+        <a href="technology.html" class="hover:text-blue-600 transition-colors">Tech Spec</a>
+        <a href="status.html" class="hover:text-blue-600 transition-colors flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Fleet Telemetry
+        </a>
+        <a href="careers.html" class="text-amber-700 font-bold flex items-center gap-1">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i> Internship Cell
+        </a>
+        <a href="index.html#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3 shrink-0 ml-4">
+        <button id="cmd-palette-trigger" class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-sm text-xs text-slate-600 hover:text-slate-900 transition-colors">
+          <i data-lucide="command" class="w-3.5 h-3.5 text-blue-600"></i>
+          <span>Cmd+K</span>
+        </button>
+        <a href="#apply" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs transition-all shadow-md shadow-amber-500/25">
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-12 pb-24 bg-mesh-radial">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- HERO -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-300 bg-amber-50 text-amber-800 text-xs font-semibold uppercase tracking-wider">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i> Active Student Innovation Program
+        </div>
+        <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950 leading-tight">
+          Build Real Cyber-Physical Systems. Not Synthetic Toy Projects.
+        </h1>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Vectroplex Technologies is actively recruiting passionate engineering and computer science undergraduates for collaborative, high-impact internships. Work directly with our founders on real robotics, edge AI vision, and high-volume local commerce.
+        </p>
+      </div>
+
+      <!-- VALUE PILLARS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-md shadow-slate-100 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center font-bold">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-950">Live Hardware Deployments</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Write firmware, design circuits, and interface microcontrollers with physical locking mechanisms and camera sensors on live pilot micro-branches.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-md shadow-slate-100 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center font-bold">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-950">Direct Founder Mentorship</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            No middle managers or artificial bureaucracy. Review code, brainstorm patent architecture, and deploy systems alongside core company leadership.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-md shadow-slate-100 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center font-bold">
+            <i data-lucide="file-badge" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-950">Credential & Patent Inclusion</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Tangible portfolio value: Verified startup internship credential, formal recommendation letters, and potential co-authorship on technology patents.
+          </p>
+        </div>
+      </div>
+
+      <!-- OPEN TRACKS -->
+      <div class="space-y-6">
+        <div class="max-w-2xl">
+          <span class="text-amber-700 font-mono text-xs uppercase tracking-wider font-semibold">Specialization Tracks</span>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-950 mt-1">Select Your Core Focus Area</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-md shadow-slate-100 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-3 py-1 bg-amber-50 text-amber-800 rounded-full border border-amber-200 font-bold">Track 01</span>
+              <span class="text-xs text-slate-500 font-medium">Hardware & Firmware</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-950">Edge Microcontrollers & Embedded IoT</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Design ESP32-S3, STM32, and Raspberry Pi CM4 control routines. Interface industrial sensors, RS-485 serial buses, solenoid vault locks, and power-monitoring relays.
+            </p>
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">C/C++</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">ESP-IDF</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">FreeRTOS</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">I2C / SPI</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-md shadow-slate-100 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-3 py-1 bg-blue-50 text-blue-800 rounded-full border border-blue-200 font-bold">Track 02</span>
+              <span class="text-xs text-slate-500 font-medium">AI & Vision</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-950">Computer Vision & Multimodal Extraction</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Train and optimize lightweight vision models for anti-spoofing document validation, optical character recognition on thermal receipts, and biometric verification.
+            </p>
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">Python</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">PyTorch / ONNX</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">OpenCV</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">HuggingFace</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-md shadow-slate-100 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full border border-emerald-200 font-bold">Track 03</span>
+              <span class="text-xs text-slate-500 font-medium">Web & Cloud Systems</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-950">Full-Stack & Distributed Microservices</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Build resilient real-time APIs, WebSockets event streams, merchant inventory synchronization feeds, and cryptographic transaction verification ledgers.
+            </p>
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">FastAPI</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">Next.js / Tailwind</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">PostgreSQL</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">Docker</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-md shadow-slate-100 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-3 py-1 bg-purple-50 text-purple-800 rounded-full border border-purple-200 font-bold">Track 04</span>
+              <span class="text-xs text-slate-500 font-medium">Operations & Commerce</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-950">Hyperlocal Product Growth & Operations</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Onboard and empower neighborhood retail merchants, model local inventory availability dynamics, and design friction-free buyer-merchant pre-booking flows.
+            </p>
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-600">
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">B2B Strategy</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">Retail Operations</span>
+              <span class="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded-md">Merchant Growth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE ENGINEERING SKILL CHALLENGE -->
+      <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl shadow-slate-100 space-y-6">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono uppercase font-semibold">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-blue-600"></i> Interactive Applicant Skill Test
+            </div>
+            <h2 class="font-display font-bold text-2xl text-slate-950 mt-2">Test Your Engineering Intuition</h2>
+            <p class="text-xs text-slate-500 mt-1">Try solving this real-world Vectroplex edge system question before submitting.</p>
+          </div>
+          <span class="text-xs text-slate-500 font-mono bg-slate-100 px-3 py-1 rounded-full border border-slate-200">Optional Diagnostic</span>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+          <p class="text-sm text-slate-800 font-mono leading-relaxed">
+            <strong>Scenario:</strong> An unstaffed kiosk terminal loses main AC power during a physical document scan. The secondary LiFePO4 battery switches on instantly. What is the immediate correct hardware routine to safeguard the citizen's document?
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="quiz-options">
+            <button onclick="checkQuiz(1)" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-xs text-left text-slate-700 font-medium transition-colors shadow-sm">
+              A) Shut down the camera immediately and trigger the external siren alarm.
+            </button>
+            <button onclick="checkQuiz(2)" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-xs text-left text-slate-700 font-medium transition-colors shadow-sm">
+              B) Complete intake optical hash, lock the micro-vault, and beacon a low-battery telemetry ping.
+            </button>
+            <button onclick="checkQuiz(3)" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-xs text-left text-slate-700 font-medium transition-colors shadow-sm">
+              C) Eject the document into the open tray without hashing to save battery power.
+            </button>
+            <button onclick="checkQuiz(4)" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-xs text-left text-slate-700 font-medium transition-colors shadow-sm">
+              D) Reboot the main Compute Module 4 into safe mode.
+            </button>
+          </div>
+
+          <div id="quiz-feedback" class="hidden p-4 rounded-xl text-xs font-mono font-medium"></div>
+        </div>
+      </div>
+
+      <!-- DIRECT APPLICATION FORM -->
+      <div id="apply" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl shadow-slate-100 space-y-8">
+        <div class="max-w-2xl">
+          <span class="text-amber-700 font-mono text-xs uppercase tracking-wider font-semibold">Fast-Track Intake</span>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-950 mt-1">Submit Your Student Application</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2">Applications are reviewed directly by the founding team. High-potential applicants receive an interview invitation within 48 hours.</p>
+        </div>
+
+        <form class="space-y-5" onsubmit="handleInternshipSubmit(event)">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+              <input type="text" id="app-name" required placeholder="e.g. Priyadarshini M" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">College / University & Branch *</label>
+              <input type="text" id="app-college" required placeholder="e.g. PSG Tech / CIT - CSE / ECE" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Year of Study *</label>
+              <select id="app-year" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20">
+                <option value="1st Year">1st Year Undergraduate</option>
+                <option value="2nd Year">2nd Year Undergraduate</option>
+                <option value="3rd Year" selected>3rd Year Undergraduate</option>
+                <option value="Final Year">Final Year Undergraduate</option>
+                <option value="Postgraduate">Postgraduate / Masters</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Preferred Track *</label>
+              <select id="app-track" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20">
+                <option value="Edge Hardware & IoT">Track 1: Edge Hardware & IoT</option>
+                <option value="Computer Vision & AI">Track 2: Computer Vision & AI</option>
+                <option value="Full-Stack Web & Systems">Track 3: Full-Stack Web & Systems</option>
+                <option value="Hyperlocal Growth & Ops">Track 4: Hyperlocal Growth & Ops</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">WhatsApp / Phone *</label>
+              <input type="tel" id="app-phone" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">GitHub / Portfolio URL *</label>
+              <input type="url" id="app-github" required placeholder="https://github.com/your-username" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">LinkedIn Profile (Optional)</label>
+              <input type="url" id="app-linkedin" placeholder="https://linkedin.com/in/your-profile" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">What is the most technically complex thing you've built or solved? *</label>
+            <textarea id="app-pitch" rows="3" required placeholder="Tell us about a hardware circuit, algorithm, project, or bug you tackled..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2">
+            <span>Transmit Application To Founders</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-slate-200 bg-slate-50 text-center text-xs text-slate-600">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <div class="flex justify-center items-center gap-3 text-slate-950 font-display font-bold">
+        <img src="assets/images/logo-emblem.png" alt="Vectroplex Emblem" class="w-8 h-8 object-contain" />
+        <span class="tracking-wider text-sm font-extrabold">VECTROPLEX TECHNOLOGIES</span>
+      </div>
+      <p class="text-slate-500">Autonomous Banking Terminals • Deterministic Tax Automation • Hyperlocal Mesh Retail</p>
+      <p class="font-mono text-slate-600">Official Inquiries: <a href="mailto:vectroplextechnologies@gmail.com" class="text-blue-600 hover:underline font-semibold">vectroplextechnologies@gmail.com</a></p>
+      <p class="text-slate-400 text-[11px]">© 2026 Vectroplex Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/sound-fx.js"></script>
+  <script src="assets/js/command-palette.js"></script>
+  <script>
+    lucide.createIcons();
+
+    function checkQuiz(choice) {
+      const fb = document.getElementById('quiz-feedback');
+      fb.classList.remove('hidden');
+
+      if (choice === 2) {
+        if (window.vectroSound) window.vectroSound.success();
+        fb.className = "p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono font-semibold";
+        fb.innerHTML = "✅ <strong>CORRECT!</strong> Exactly right. In critical cyber-physical systems, securing physical custody and maintaining tamper verification ledger integrity comes first, followed by telemetry alert transmission.";
+      } else {
+        if (window.vectroSound) window.vectroSound.alert();
+        fb.className = "p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono font-semibold";
+        fb.innerHTML = "❌ <strong>Incorrect.</strong> Hint: Physical collateral must never be left in an unsecured state or ejected, and tearing down power abruptly corrupts optical proof records. Look at Option B.";
+      }
+    }
+
+    function handleInternshipSubmit(e) {
+      e.preventDefault();
+      if (window.vectroSound) window.vectroSound.success();
+
+      const name = document.getElementById('app-name').value;
+      const college = document.getElementById('app-college').value;
+      const year = document.getElementById('app-year').value;
+      const track = document.getElementById('app-track').value;
+      const phone = document.getElementById('app-phone').value;
+      const gh = document.getElementById('app-github').value;
+      const pitch = document.getElementById('app-pitch').value;
+
+      const waMsg = encodeURIComponent(`*Student Internship Application - Vectroplex Technologies*\n*Name:* ${name}\n*College:* ${college} (${year})\n*Track:* ${track}\n*Phone:* ${phone}\n*GitHub:* ${gh}\n*Key Project/Pitch:* ${pitch}`);
+      
+      alert("Application recorded! Launching official founder communication channel.");
+      window.open(`https://wa.me/919092623330?text=${waMsg}`, '_blank');
+    }
+  </script>
+</body>
+</html>
