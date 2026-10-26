@@ -14,6 +14,7 @@
     { label: "Live Fleet Telemetry & Network Health", category: "Infrastructure", action: () => { window.location.href = "status.html"; } },
     { label: "Student Collaborative Internship Cell", category: "Careers & Talent", action: () => { window.location.href = "careers.html"; } },
     { label: "Partner With Us / Founder Direct Channel", category: "Inquiries", action: () => { window.location.hash = "#contact"; } },
+    { label: "Official LinkedIn Company Profile", category: "Corporate", action: () => { window.open("https://www.linkedin.com/company/vectroplex-technologies/", "_blank"); } },
     { label: "Toggle Cyber Synthesizer Audio", category: "Settings", action: () => { if (window.vectroSound) { const en = window.vectroSound.toggle(); alert(`Cyber Audio FX: ${en ? 'ENABLED' : 'MUTED'}`); } } },
   ];
 
