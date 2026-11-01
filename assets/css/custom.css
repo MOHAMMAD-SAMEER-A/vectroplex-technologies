@@ -199,3 +199,82 @@ dialog::backdrop {
 .logo-ambient {
   animation: logoPulseLight 4s ease-in-out infinite;
 }
+
+/* ==========================================================================
+   Institutional Pilot Feasibility & Unit Economics Model (Terminal Theme)
+   ========================================================================== */
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Deep-Tech Terminal Slider */
+input[type="range"].terminal-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #1e293b;
+  border-radius: 9999px;
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+input[type="range"].terminal-slider:hover {
+  background: #334155;
+}
+
+input[type="range"].terminal-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #06b6d4;
+  border: 2px solid #0f172a;
+  box-shadow: 0 0 14px rgba(6, 182, 212, 0.7);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"].terminal-slider::-webkit-slider-thumb:hover,
+input[type="range"].terminal-slider:active::-webkit-slider-thumb {
+  transform: scale(1.25);
+  background: #22d3ee;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.9);
+}
+
+input[type="range"].terminal-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #06b6d4;
+  border: 2px solid #0f172a;
+  box-shadow: 0 0 14px rgba(6, 182, 212, 0.7);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"].terminal-slider::-moz-range-thumb:hover,
+input[type="range"].terminal-slider:active::-moz-range-thumb {
+  transform: scale(1.25);
+  background: #22d3ee;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.9);
+}
+
+/* Preset Scenario Chips */
+.pilot-chip {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pilot-chip.active {
+  background: rgba(6, 182, 212, 0.15) !important;
+  border-color: #06b6d4 !important;
+  color: #22d3ee !important;
+  box-shadow: 0 0 16px -2px rgba(6, 182, 212, 0.35);
+}
+
+.pilot-chip.active .chip-indicator {
+  background-color: #06b6d4 !important;
+  box-shadow: 0 0 8px #22d3ee;
+}
