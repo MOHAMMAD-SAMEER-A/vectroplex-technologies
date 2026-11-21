@@ -1415,8 +1415,21 @@
             </button>
 
             <div id="formSuccessToast"
-              class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-medium">
-              Thank you! Your transmission has been compiled and routed directly to our founders.
+              class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-medium space-y-1">
+              <div class="font-bold flex items-center gap-1.5 text-emerald-900">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span>Inquiry Delivered Directly to Corporate Inbox</span>
+              </div>
+              <p>Thank you! Your requirements have been transmitted directly to our inbox. Our executive engineering team will review your specifications and reply to your provided email within 24 hours.</p>
+            </div>
+
+            <div id="formErrorToast"
+              class="hidden p-4 rounded-xl bg-rose-50 border border-rose-300 text-rose-800 text-xs font-medium space-y-1">
+              <div class="font-bold flex items-center gap-1.5 text-rose-900">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600 shrink-0"></i>
+                <span id="formErrorTitle">Transmission Notice</span>
+              </div>
+              <p id="formErrorMessage">We couldn't reach the mail server. Please send your query directly to <a href="mailto:vectroplextechnologies@gmail.com" class="font-mono underline font-bold">vectroplextechnologies@gmail.com</a> or message us on WhatsApp.</p>
             </div>
           </form>
         </div>
@@ -1470,6 +1483,7 @@
   </dialog>
 
   <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="assets/js/sound-fx.js"></script>
   <script src="assets/js/scenarios.js"></script>
   <script src="assets/js/calculator.js"></script>
@@ -1477,6 +1491,22 @@
 
   <script>
     lucide.createIcons();
+
+    // ==============================================================
+    // EmailJS Configuration - Corporate Inbox Integration
+    // Replace the placeholders with your EmailJS credentials
+    // (Follow the step-by-step instructions provided in the guide)
+    // ==============================================================
+    const EMAILJS_CONFIG = {
+      publicKey: "YOUR_PUBLIC_KEY",      // e.g. "AbCdEfGh12345" from EmailJS Account > API Keys
+      serviceId: "YOUR_SERVICE_ID",      // e.g. "service_vectroplex" from Email Services
+      templateId: "YOUR_TEMPLATE_ID",    // e.g. "template_inquiry" from Email Templates
+      targetEmail: "vectroplextechnologies@gmail.com" // Destination inbox
+    };
+
+    if (window.emailjs && EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== "YOUR_PUBLIC_KEY") {
+      emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+    }
 
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const drawer = document.getElementById('mobileDrawer');
@@ -1514,32 +1544,86 @@
       });
     }
 
-    function handleFormSubmit(event) {
+    async function handleFormSubmit(event) {
       event.preventDefault();
       if (window.vectroSound) window.vectroSound.click();
 
       const btn = document.getElementById('submitBtn');
-      const toast = document.getElementById('formSuccessToast');
+      const successToast = document.getElementById('formSuccessToast');
+      const errorToast = document.getElementById('formErrorToast');
+      const errorTitle = document.getElementById('formErrorTitle');
+      const errorMessage = document.getElementById('formErrorMessage');
 
-      const name = document.getElementById('fullName').value;
-      const org = document.getElementById('organization').value;
-      const phone = document.getElementById('phoneNumber').value;
-      const email = document.getElementById('emailAddress').value;
+      successToast.classList.add('hidden');
+      errorToast.classList.add('hidden');
+
+      const name = document.getElementById('fullName').value.trim();
+      const org = document.getElementById('organization').value.trim();
+      const phone = document.getElementById('phoneNumber').value.trim();
+      const email = document.getElementById('emailAddress').value.trim();
       const interest = document.getElementById('areaOfInterest').value;
-      const message = document.getElementById('message').value;
+      const message = document.getElementById('message').value.trim();
 
+      const originalBtnHTML = btn.innerHTML;
       btn.disabled = true;
-      btn.innerText = "Routing to Founders...";
+      btn.innerHTML = '<span class="inline-block animate-spin mr-2">⟳</span> Transmitting to Corporate Inbox...';
 
-      setTimeout(() => {
+      const templateParams = {
+        from_name: name,
+        organization: org,
+        phone_number: phone,
+        reply_to: email,
+        from_email: email,
+        area_of_interest: interest,
+        message: message,
+        to_email: EMAILJS_CONFIG.targetEmail,
+        timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+      };
+
+      try {
+        // If credentials are placeholders, notify and run graceful testing mode
+        if (!EMAILJS_CONFIG.publicKey || EMAILJS_CONFIG.publicKey === "YOUR_PUBLIC_KEY" ||
+            !EMAILJS_CONFIG.serviceId || EMAILJS_CONFIG.serviceId === "YOUR_SERVICE_ID" ||
+            !EMAILJS_CONFIG.templateId || EMAILJS_CONFIG.templateId === "YOUR_TEMPLATE_ID") {
+          
+          console.warn("[EmailJS] Credentials not yet configured. Please insert your serviceId, templateId, and publicKey in index.html to receive emails in your inbox.");
+          
+          await new Promise(resolve => setTimeout(resolve, 800));
+          if (window.vectroSound) window.vectroSound.success();
+          
+          successToast.classList.remove('hidden');
+          btn.disabled = false;
+          btn.innerHTML = '<span>Inquiry Recorded (Setup Mode)</span> <i data-lucide="check" class="w-4 h-4"></i>';
+          lucide.createIcons();
+          
+          // Launch WhatsApp channel as instant fallback during setup mode
+          const waText = encodeURIComponent(`*Vectroplex Technologies Enterprise Inquiry*\n*Name:* ${name}\n*Org:* ${org}\n*Phone:* ${phone}\n*Email:* ${email}\n*Interest:* ${interest}\n*Message:* ${message}`);
+          window.open(`https://wa.me/919092623330?text=${waText}`, '_blank');
+          return;
+        }
+
+        // Live EmailJS transmission to corporate inbox
+        await emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams, EMAILJS_CONFIG.publicKey);
+
         if (window.vectroSound) window.vectroSound.success();
-        toast.classList.remove('hidden');
+        successToast.classList.remove('hidden');
+        document.getElementById('contactForm').reset();
         btn.disabled = false;
-        btn.innerHTML = '<span>Inquiry Recorded Successfully</span>';
+        btn.innerHTML = '<span>Inquiry Delivered Directly</span> <i data-lucide="check" class="w-4 h-4"></i>';
+        lucide.createIcons();
 
-        const waText = encodeURIComponent(`*Vectroplex Technologies Enterprise Inquiry*\n*Name:* ${name}\n*Org:* ${org}\n*Phone:* ${phone}\n*Email:* ${email}\n*Interest:* ${interest}\n*Message:* ${message}`);
-        window.open(`https://wa.me/919092623330?text=${waText}`, '_blank');
-      }, 700);
+      } catch (err) {
+        console.error("[EmailJS] Transmission Error:", err);
+        if (window.vectroSound) window.vectroSound.alert();
+        
+        errorTitle.innerText = "Transmission Alert";
+        errorMessage.innerHTML = `Could not connect to automated mail service (${err?.text || 'Network error'}). You can email us directly at <a href="mailto:${EMAILJS_CONFIG.targetEmail}?subject=Enterprise%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}" class="font-mono underline font-bold">${EMAILJS_CONFIG.targetEmail}</a> or reach out on WhatsApp.`;
+        errorToast.classList.remove('hidden');
+        
+        btn.disabled = false;
+        btn.innerHTML = '<span>Retry Sending</span> <i data-lucide="send" class="w-4 h-4"></i>';
+        lucide.createIcons();
+      }
     }
   </script>
 </body>
